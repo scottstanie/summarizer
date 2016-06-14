@@ -1,6 +1,6 @@
 from __future__ import unicode_literals
 import os
-from flask import Flask, request, jsonify
+from flask import Flask, render_template, request, jsonify
 
 from sumy.parsers.html import HtmlParser
 from sumy.parsers.plaintext import PlaintextParser
@@ -26,11 +26,13 @@ app.config.from_object(__name__)
 
 @app.route('/')
 def index():
-    return "OK"
+    return render_template('index.html')
 
 
 @app.route('/summarize', methods=['POST'])
 def summarize():
+    print dir(request)
+    print request.json
     url = request.json.get('url')
     summary = summarize_url(url)
     return jsonify(summary)
@@ -59,4 +61,4 @@ def summarize_url(url):
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     host = os.environ.get("HOST", '0.0.0.0')
-    app.run(host='0.0.0.0', port=port)
+    app.run(host=host, port=port)

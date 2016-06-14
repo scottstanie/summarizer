@@ -1,0 +1,12 @@
+<!doctype html>
+<head>
+  <title>smmrizr</title>
+</head>
+<body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  <label>Enter url to summarize</label>
+  <input type="text" id="input-url" size="40">
+  <button id="submit-summary">Summarize</button>
+  <div id="summary"></div>
+</body>
