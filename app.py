@@ -20,7 +20,7 @@ import nltk
 nltk.data.path.append('./nltk_data/')
 
 LANGUAGE = "english"
-SENTENCES_COUNT = 3
+SENTENCES_COUNT = 5
 
 # configuration
 DATABASE = '/tmp/flaskr.db'
