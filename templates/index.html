@@ -7,6 +7,15 @@
   <script src="{{ url_for('static', filename='js/app.js') }}"></script>
   <label>Enter url to summarize</label>
   <input type="text" id="input-url" size="40">
+  <select id="summarizer">
+  <option value="luhn">Luhn</option>
+  <option value="edmundson">Edmundson</option>
+  <option value="lsa">LSA</option>
+  <option value="lex">Lex</option>
+  <option value="text">Text</option>
+  <option value="sb">SB</option>
+  <option value="kl">KL</option>
+</select>
   <button id="submit-summary">Summarize</button>
   <div id="summary"></div>
 </body>

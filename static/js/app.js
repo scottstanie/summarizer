@@ -1,12 +1,15 @@
 $(document).ready(function() {
   $('#submit-summary').on('click', function() {
     var url = $('#input-url').val();
+    var summarizer = $('#summarizer').val();
+    console.log(summarizer);
     console.log(url);
     $.ajax({
       type: 'POST',
       url: '/summarize',
       data: JSON.stringify({
-        url: url
+        url: url,
+        summarizer: summarizer
       }),
       contentType: 'application/json',
       dataType: 'json',
