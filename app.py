@@ -64,14 +64,14 @@ def summarize_url(url,summarizer):
     elif summarizer == 'lsa':
         summarizer = LsaSummarizer(stemmer)
     elif summarizer == 'lex':
-        summarizer = LexRankSummarizer(stemmer)
+        summarizer = LexSummarizer(stemmer)
     elif summarizer == 'text':
-        summarizer = TextRankSummarizer(stemmer)
+        summarizer = TextSummarizer(stemmer)
     elif summarizer == 'sb':
         summarizer = SumBasicSummarizer(stemmer)
-    elif summarizer == 'kl':
+    else:
         summarizer = KLSummarizer(stemmer)
-        
+
     summarizer.stop_words = get_stop_words(LANGUAGE)
     print summarizer
 
