@@ -8,6 +8,8 @@ from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.text_rank import TextRankSummarizer as Summarizer
 from sumy.nlp.stemmers import Stemmer
 from sumy.utils import get_stop_words
+import nltk
+nltk.data.path.append('./nltk_data/')
 
 LANGUAGE = "english"
 SENTENCES_COUNT = 5
